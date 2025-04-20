@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "ws.h": "c",
+        "ma.h": "c",
+        "rsi.h": "c",
+        "stdlib.h": "c",
+        "array": "c",
+        "string": "c",
+        "string_view": "c",
+        "stochastic.h": "c"
+    },
+    "cmake.ignoreCMakeListsMissing": true
+}
