@@ -22,17 +22,17 @@ typedef struct keltner_s keltner_t;
 keltner_t *keltner_init(uint32_t ema_periods, uint32_t atr_periods, double multiplier);
 void keltner_push_val(keltner_t *keltner, double high, double low, double close);
 
-inline double keltner_get_middle(keltner_t *keltner)
+static inline double keltner_get_middle(keltner_t *keltner)
 {
     return ema_get_val(keltner->ema);
 }
 
-inline double keltner_get_upper(keltner_t *keltner)
+static inline double keltner_get_upper(keltner_t *keltner)
 {
     return ema_get_val(keltner->ema) + keltner->multiplier * atr_get_val(keltner->atr);
 }
 
-inline double keltner_get_lower(keltner_t *keltner)
+static inline double keltner_get_lower(keltner_t *keltner)
 {
     return ema_get_val(keltner->ema) - keltner->multiplier * atr_get_val(keltner->atr);
 }

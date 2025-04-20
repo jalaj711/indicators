@@ -23,12 +23,12 @@ typedef struct stochastic_s stochastic_t;
 stochastic_t *stochastic_init(uint32_t lookback_periods, uint32_t mod_d_periods);
 void stochastic_push_val(stochastic_t *stoch, double close);
 
-inline double stochastic_get_k(stochastic_t *stoch)
+static inline double stochastic_get_k(stochastic_t *stoch)
 {
     return stoch->k;
 }
 
-inline double stochastic_get_d(stochastic_t *stoch)
+static inline double stochastic_get_d(stochastic_t *stoch)
 {
     return sma_get_val(stoch->mod_d);
 }

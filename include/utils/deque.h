@@ -22,21 +22,21 @@ double deque_pop_front(deque_t *deque);
 double deque_pop_rear(deque_t *deque);
 void deque_free(deque_t *deque);
 
-inline double deque_peek_front(deque_t *deque)
+static inline double deque_peek_front(deque_t *deque)
 {
     return deque->buffer[deque->front];
 }
 
-inline double deque_peek_rear(deque_t *deque)
+static inline double deque_peek_rear(deque_t *deque)
 {
     return deque->buffer[deque->back];
 }
-inline uint8_t deque_is_empty(deque_t *deque)
+static inline uint8_t deque_is_empty(deque_t *deque)
 {
     return deque->size == 0;
 }
 
-inline uint8_t deque_is_full(deque_t *deque)
+static inline uint8_t deque_is_full(deque_t *deque)
 {
     return deque->size == deque->cap;
 }

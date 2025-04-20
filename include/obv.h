@@ -13,7 +13,7 @@ typedef struct obv_s obv_t;
 obv_t *obv_init();
 uint8_t obv_push_val(obv_t *obv, double open, double close, double volume);
 
-inline double obv_get_val(obv_t *obv)
+static inline double obv_get_val(obv_t *obv)
 {
     return obv->value;
 }

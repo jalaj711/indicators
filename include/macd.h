@@ -25,17 +25,17 @@ void macd_push_val(macd_t *macd, double val);
 /**
  * Inline functions
  */
-inline double macd_get_macd(macd_t *macd)
+static inline double macd_get_macd(macd_t *macd)
 {
     return macd->macd;
 }
 
-inline double macd_get_signal(macd_t *macd)
+static inline double macd_get_signal(macd_t *macd)
 {
     return ema_get_val(macd->signal);
 }
 
-inline double macd_get_histogram(macd_t *macd)
+static inline double macd_get_histogram(macd_t *macd)
 {
     return macd->histogram;
 }

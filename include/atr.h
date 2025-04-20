@@ -17,7 +17,7 @@ typedef struct atr_s atr_t;
 atr_t *atr_init(double loockback_periods);
 void atr_push_val(atr_t *atr, double high, double low, double close);
 
-inline double atr_get_val(atr_t *atr)
+static inline double atr_get_val(atr_t *atr)
 {
     return ema_get_val(atr->ema);
 }

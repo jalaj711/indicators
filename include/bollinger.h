@@ -20,11 +20,11 @@ typedef struct bollinger_s bollinger_t;
 bollinger_t *bollinger_init(double lookback_periods, double multiplier);
 void bollinger_push_val(bollinger_t *bollinger, double price);
 
-inline double bollinger_get_lower(bollinger_t *bollinger)
+static inline double bollinger_get_lower(bollinger_t *bollinger)
 {
     return sma_get_val(bollinger->price) - bollinger->std * bollinger->multiplier;
 }
-inline double bollinger_get_upper(bollinger_t *bollinger)
+static inline double bollinger_get_upper(bollinger_t *bollinger)
 {
     return sma_get_val(bollinger->price) + bollinger->std * bollinger->multiplier;
 }

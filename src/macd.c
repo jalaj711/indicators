@@ -2,7 +2,7 @@
 #include "ma.h"
 #include "stdlib.h"
 
-inline macd_t *macd_init(double signal_periods, double fast_ema_periods, double slow_ema_periods)
+macd_t *macd_init(double signal_periods, double fast_ema_periods, double slow_ema_periods)
 {
     macd_t *macd = (macd_t *)malloc(sizeof(macd_t));
     macd->histogram = 0;
@@ -16,7 +16,7 @@ inline macd_t *macd_init(double signal_periods, double fast_ema_periods, double 
     return macd;
 }
 
-inline void macd_push_val(macd_t *macd, double val)
+void macd_push_val(macd_t *macd, double val)
 {
     ema_push_val(macd->first, val);
     ema_push_val(macd->second, val);

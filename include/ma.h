@@ -19,11 +19,10 @@ typedef struct sma_s sma_t;
 sma_t *sma_init(uint32_t periods);
 uint8_t sma_push_val(sma_t *sma, double val);
 
-inline double sma_get_val(sma_t *sma)
+static inline double sma_get_val(sma_t *sma)
 {
     return sma->sum / sma->periods;
 }
-
 
 /*
  * Functions and structs for the Exponential Moving Average
@@ -42,10 +41,9 @@ typedef struct ema_s ema_t;
 ema_t *ema_init(uint32_t periods);
 uint8_t ema_push_val(ema_t *ema, double val);
 
-inline double ema_get_val(ema_t *ema)
+static inline double ema_get_val(ema_t *ema)
 {
     return ema->curr;
 }
-
 
 #endif // INDICATORS_MA_H
